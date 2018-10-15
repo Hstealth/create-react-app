@@ -1,9 +1,8 @@
 
 import LoadableFunc from "../lib/loadable"
 const Arr = [
-  { url: "aa", path: "/homePage", title: "首页" },
+  { url: "aa", path: "/", title: "首页" },
   { url: "bb", path: "/dvscreen/", title: "公益大屏" },
-  { url: "404", path: "/404", title: "公益大屏" },
 ];
 
 

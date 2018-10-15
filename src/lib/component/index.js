@@ -4,11 +4,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { api } from  '~T/apiRequest'
-import  Links from '../Link'
-import {bindActionCreators} from 'redux'
+import Links from '../Link'
+import { bindActionCreators } from 'redux'
 import { apiUrl } from '../../config'
 import { public_url } from '../../tools/common'
+import { request } from '../../tools/apiRequest'
 export default class Component extends React.Component {
   _classNames(...args) {
     return classnames(args);
@@ -21,7 +21,7 @@ export default class Component extends React.Component {
 
 
 Component.prototype.apiUrl = apiUrl
-Component.prototype.$http =  api
+Component.prototype.$http = request
 Component.prototype.public_url = public_url
 Component.propTypes = {
   className: PropTypes.string,
@@ -31,12 +31,12 @@ export const Link = Links
 
 
 //获取 redux state 
-export const mapStateProps = (...arg)=>{
+export const mapStateProps = (...arg) => {
 
-  return (state)=>{
+  return (state) => {
     let obj = {}
-    for(let i = 0; i < arg.length; i++ ){
-      Object.assign(obj,state[arg[i]])
+    for (let i = 0; i < arg.length; i++) {
+      Object.assign(obj, state[arg[i]])
     }
     return obj
   }
@@ -44,14 +44,14 @@ export const mapStateProps = (...arg)=>{
 
 
 //redux 设置方法
-export const mapFn = (...arg) =>{
+export const mapFn = (...arg) => {
 
-  return (dispatch)=>{
+  return (dispatch) => {
     let bindAction = {}
-    for(let i = 0; i < arg.length; i++ ){
-      let item = {...arg[i]}
-      Object.assign(bindAction,item)
+    for (let i = 0; i < arg.length; i++) {
+      let item = { ...arg[i] }
+      Object.assign(bindAction, item)
     }
-    return bindActionCreators(bindAction,dispatch)
+    return bindActionCreators(bindAction, dispatch)
   }
 } 

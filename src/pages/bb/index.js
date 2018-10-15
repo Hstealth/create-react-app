@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Component, { mapFn, mapStateProps, Link } from "../../lib/component";
+import style from './index.module.scss'
 
 export default class Index extends Component {
   render(){
-    return <div>bb</div>
+    return <div className={style.body}>bb
+    <Link to="/">aa</Link>
+    </div>
   }
 }

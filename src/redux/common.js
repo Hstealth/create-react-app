@@ -36,14 +36,7 @@ export const dispatch_common_func = {
       });
     }
   },
-  getDonateCitys: (data) => {
-    return dispatch => {
-      dispatch({
-        type: DONATE_CITYS,
-        data: data
-      });
-    }
-  },
+
 
 }
 
